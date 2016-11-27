@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
+from django.contrib.auth.models import User
 
 
 def logout(request):
@@ -8,7 +9,6 @@ def logout(request):
 
 
 def login(request):
-
     if request.method == "GET":
         return render(request, "auth/login.html")
 
@@ -30,3 +30,19 @@ def login(request):
                 return render(redirect, "auth/login.html", {"warning": "Your account is disabled"})
         else:
             return render(request, "auth/login.html", {"warning": "Invalid username and or password"})
+
+
+def register(request):
+    if request.method == "GET":
+        return render(request, "auth/register.html")
+
+    elif request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        User.objects.create_user(username, email, password).save()
+        user = auth.authenticate(username=username, password=password)
+
+        auth.login(request, user)
+        return render(request, "auth/registerd.html")
