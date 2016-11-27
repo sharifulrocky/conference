@@ -45,4 +45,4 @@ def register(request):
         user = auth.authenticate(username=username, password=password)
 
         auth.login(request, user)
-        return render(request, "auth/registerd.html")
+        return render(request, "auth/registered.html")
