@@ -27,6 +27,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="/admin">Administrator</a></li>
+                        <li><a href="/login/">Login</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -35,6 +36,14 @@
         	<div class="jumbotron">
                 <h2>Welcome to Conference! </h2>
         	</div>
+
+            {% if warning %}
+                <div class="alert alert-warning alert-dismissable">
+                	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                	{{ warning }}
+                </div>
+            {% endif %}
+
             <div class="row">
                 <div class="col-md-12">
                     {% block content %}
