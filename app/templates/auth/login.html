@@ -2,12 +2,13 @@
 
 {% block content %}
     <form action="" method="post" class="form-horizontal" role="form">
+
         {% csrf_token %}
+
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">Username</label>
             <div class="col-sm-10">
                 <input type="text" name="username" id="username" class="form-control" placeholder="Enter username" >
-
             </div>
         </div>
 
@@ -15,7 +16,6 @@
             <label for="password" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
                 <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" >
-
             </div>
         </div>
 
@@ -24,6 +24,12 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
+        <div class="form-group">
+            <p align="center">If you are not an user <a href="{% url 'register' %}">register</a> </p>
+        </div>
     </form>
+    <div>
+
+    </div>
 
 {% endblock %}
