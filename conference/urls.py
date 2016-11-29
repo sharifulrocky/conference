@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^register/', auth.register, name='register'),
     url(r'^about/', views.about, name='about'),
     url(r'^secret/', views.secret, name='secret'),
+    url(r'^sessions/$', views.SessionList.as_view(), name='sessions_list'),
+    url(r'^sessions/(?P<pk>[0-9]+)/$', views.SessionDetail.as_view(), name='sessions_detail'),
 ]
