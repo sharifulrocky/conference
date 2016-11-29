@@ -26,9 +26,7 @@ SECRET_KEY = '0!(0bury-_a+t0!0^&+s$ei7700&33)$c-ypg$r&@j@opxl+8x'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
-# Application definition
+LOGIN_URL = '/login/'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
