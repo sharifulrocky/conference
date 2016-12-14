@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 *.pyc
 manage.py
 #django file
 *.pyc
+=======
+>>>>>>> 0c66193a3f7c33058283e759c59f6e9c6a772b93
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
