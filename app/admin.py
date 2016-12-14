@@ -21,7 +21,7 @@ def make_cancelled(self, request, queryset):
         message_bit = '%s row(s)' % row_update
     self.message_user(request, '%s Cancelled' % message_bit)
 
-make_submitted.short_description = 'Marked as Cancelled'
+make_cancelled.short_description = 'Marked as Cancelled'
 
 
 class SessionAdmin(admin.ModelAdmin):
