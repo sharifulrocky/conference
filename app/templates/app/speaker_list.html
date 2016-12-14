@@ -1,0 +1,36 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    {% for speaker in object_list  %}
+        <div class="col-md-4">
+            <a href="{% url 'speakers_detail' speaker.pk %}">
+                {{ speaker.name }}
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="{% url 'speakers_detail' speaker.pk %}">
+                {{ speaker.title }}
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="{% url 'speakers_update' speaker.pk %}">
+                Update
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="{% url 'speakers_delete' speaker.pk %}">
+                Delete
+            </a>
+        </div>
+    {% endfor %}
+    <br><br>
+    <div class="col-md-12 text-center">
+        <a href="{% url 'speakers_create' %}">
+            Create New one
+        </a>
+    </div>
+
+{% endblock %}

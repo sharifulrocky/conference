@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Speaker(models.Model):
@@ -11,6 +12,9 @@ class Speaker(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('speakers_detail', kwargs={'pk': self.pk})
 
 
 class Track(models.Model):
@@ -36,3 +40,6 @@ class Session(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('sessions_detail', kwargs={'pk': self.pk})

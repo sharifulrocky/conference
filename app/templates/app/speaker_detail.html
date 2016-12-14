@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-3"><strong>Name:</strong></div>
+        <div class="col-md-9">{{ object.name }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"><strong>Title:</strong></div>
+        <div class="col-md-9">{{ object.title }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"><strong>Bio:</strong></div>
+        <div class="col-md-9">{{ object.bio }}</div>
+    </div>
+
+    <br><br>
+    <div class="row">
+        <div class="col-md-9">
+            <a href="{% url 'speakers_list' %}">Back to List</a>
+        </div>
+    </div>
+
+{% endblock %}

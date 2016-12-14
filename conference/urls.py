@@ -19,13 +19,29 @@ from app import auth, views
 
 
 urlpatterns = [
+    # Base url
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^login/', auth.login, name='login'),
     url(r'^logout/', auth.logout, name='logout'),
     url(r'^register/', auth.register, name='register'),
     url(r'^about/', views.about, name='about'),
-    url(r'^secret/', views.secret, name='secret'),
+
+    # Session url
     url(r'^sessions/$', views.SessionList.as_view(), name='sessions_list'),
     url(r'^sessions/(?P<pk>[0-9]+)/$', views.SessionDetail.as_view(), name='sessions_detail'),
+    url(r'^sessions/create/$', views.SessionCreate.as_view(), name='sessions_create'),
+    url(r'^sessions/update/(?P<pk>[0-9]+)/$', views.SessionUpdate.as_view(), name='sessions_update'),
+    url(r'^sessions/delete/(?P<pk>[0-9]+)/$', views.SessionDelete.as_view(), name='sessions_delete'),
+
+    # Speaker url
+    url(r'^speaker/$', views.SpeakerList.as_view(), name='speakers_list'),
+    url(r'^speaker/(?P<pk>[0-9]+)/$', views.SpeakerDetails.as_view(), name='speakers_detail'),
+    url(r'^speaker/create/$', views.SpeakerCreate.as_view(), name='speakers_create'),
+    url(r'^speaker/update/(?P<pk>[0-9]+)/$', views.SpeakerUpdate.as_view(), name='speakers_update'),
+    url(r'^speaker/delete/(?P<pk>[0-9]+)/$', views.SpeakerDelete.as_view(), name='speakers_delete'),
+
+    # User Session url
+    url(r'^secret/', views.secret, name='secret'),
 ]
+
